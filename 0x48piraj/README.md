@@ -4,7 +4,7 @@
 
  # Live Demo!
  
- ![demo](/images/demo.gif)
+ ![demo](/0x48piraj/images/demo.gif)
  
 
 # Installation/Deployment of the Flask Web App
@@ -24,12 +24,12 @@
 
 * **Execute**, `py -3 app.py`
 
-*Hopefully, the ouput will be:* (If not, Please read [here](CONTRIBUTING.md))
-![](/images/terminal.PNG)
+*Hopefully, the ouput will be:*
+![](/0x48piraj/images/terminal.PNG)
 
 * Hit the browser, and hover to `http://127.0.0.1:5000`
 
-![](/images/ui.PNG)
+![](/0x48piraj/images/ui.PNG)
 ### Voila!
 
 
