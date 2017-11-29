@@ -1,0 +1,10 @@
+click==6.7
+first==2.0.1
+Flask==0.12.2
+itsdangerous==0.24
+Jinja2==2.10
+MarkupSafe==1.0
+pip-tools==1.10.2
+six==1.11.0
+virtualenv==15.1.0
+Werkzeug==0.12.2

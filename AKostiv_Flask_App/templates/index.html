@@ -1,0 +1,15 @@
+<html>
+<head>
+<title>User Greeting!</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<h1>Enter your name!</h1>
+<form method="POST" class="form-style-4"  action="{{ url_for('form') }}">
+    {{ form.csrf_token }}
+    {{ form.username.label }}
+    {{ form.username }}
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
