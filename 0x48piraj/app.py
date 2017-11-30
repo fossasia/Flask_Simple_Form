@@ -5,15 +5,10 @@ import json
 import os
 import shutil
 from os import path
-
-
-#import urllib #Deprecated in py3
-import urllib.request #now, it's good
+import urllib.request
 from bs4 import BeautifulSoup
-
 from scraper import AdvancedSearchScraper
-# App config.
-#DEBUG = True
+
 path = path.dirname(path.realpath(__file__))
 app = Flask(__name__,template_folder=path+'/')
 app.config['SECRET_KEY'] = '3d441f27u331c27333d331k2f3333a'
@@ -34,7 +29,6 @@ def hello():
         github=request.form['git']
         twitter=request.form['twitter']
         print(name, " ", twitter, " ", github)
- 
         if len(name) != 0:
             flash('Thanks for coming ' + name)
             if len(github) and len(twitter) != 0:
