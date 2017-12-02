@@ -1,0 +1,17 @@
+click==6.7
+first==2.0.1
+Flask==0.12.2
+Flask-WTF==0.14.2
+gunicorn==19.7.1
+itsdangerous==0.24
+Jinja2==2.10
+MarkupSafe==1.0
+pbr==3.1.1
+pip-tools==1.10.2
+six==1.11.0
+stevedore==1.27.1
+virtualenv==15.1.0
+virtualenv-clone==0.2.6
+virtualenvwrapper==4.8.2
+Werkzeug==0.12.2
+WTForms==2.1
