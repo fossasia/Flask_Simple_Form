@@ -1,5 +1,6 @@
 # GCI2017-Flask-App
 #
+# Visit my app: https://greeting-app-gci17.herokuapp.com/
 #
 # 1) Make sure that you have python,
 #    if("YES"){
