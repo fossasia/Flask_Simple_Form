@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>User Greeting!</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="icon" href="{{ url_for('static', filename='img/icon.gif') }}">
 </head>
 <body>
-<h1>{{ form.username.data }}</h1>
-</form>
+<h2>Hava a nice day, <i>{{name}}</i> !</h2>
 </body>
 </html>

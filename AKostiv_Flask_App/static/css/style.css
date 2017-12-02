@@ -3,6 +3,7 @@ body{
     background: #495C70;
     padding: 30px 30px 15px 30px;
     border: 5px solid #53687E;
+    color: white;
 }
 .form-style-4 input[type=submit],
 .form-style-4 input[type=button],
@@ -26,7 +27,7 @@ body{
     width: 150px;
 }
 .form-style-4 input[type=text],
-.form-style-4 input[type=email] 
+.form-style-4 input[type=email]
 {
     background: transparent;
     border: none;
@@ -49,7 +50,7 @@ body{
     height:20px;
 }
 
-.form-style-4 textarea:focus, 
+.form-style-4 textarea:focus,
 .form-style-4 input[type=text]:focus,
 .form-style-4 input[type=email]:focus,
 .form-style-4 input[type=email] :focus
@@ -68,12 +69,4 @@ body{
 .form-style-4 input[type=submit]:hover,
 .form-style-4 input[type=button]:hover{
 background: #394D61;
-}
-
-h1{
-	color: white;
-}
-
-#one{
-	color: green;
 }
