@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Fossasia Login</h1>
+    <form action="" method="post" name="login">
+        {{ form.hidden_tag() }}
+        <p>
+            Please enter your name:<br>
+            {{ form.openid(size=100) }}<br>
+        </p>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+
+{% endblock %}
