@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Welcome to Fossasia.</title>
+    </head>
+    <body>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

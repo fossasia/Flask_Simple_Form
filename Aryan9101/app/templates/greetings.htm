@@ -1,0 +1,24 @@
+﻿<html>
+    <head>
+        <title>{{ title }} - Welcome to Google Code-In</title>
+    </head>
+    <body>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form action="/greeting" method="post">
+            {{ form.csrf }}
+            <div class="input text">
+                {{ form.username.label }} {{ form.username }}
+	    </div>
+ 
+            <input type="submit" value="Submit" />
+        </form>
+    </body>
+</html>
