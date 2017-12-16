@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flask application</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+</head>
+<body>
+     <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="http://yashkumarverma.github.io/" class="brand-logo">Yash Kumar Verma</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="https://github.com/yashkumarverma">Github</a></li>
+          <li><a href="https://twitter.com/yash_kr_verma">Twitter</a></li>
+          <li><a href="https://stackoverflow.com/users/5131640/yash-kumar-verma?tab=profile">Stack Overflow</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+        
+ <div class="row">
+    <form class="col s12" action="/showGreeting" method="POST">
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="username" id="username" placeholder="Enter your name" type="text" class="validate" />
+        </div>
+      </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+      </form>
+  </div>
+ 
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</html>
