@@ -26,6 +26,7 @@ https://www.python.org/downloads/
   
   # OR
   cd hello_fossasia
+  
   python app.py
   
   ## Open brower address http://127.0.0.1:5000 and enjoy the application
