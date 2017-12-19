@@ -6,13 +6,11 @@ app.secret_key = 'some_secret_key'
 
 @app.route("/", methods=["GET", "POST"])
 def homepage():
-    print('fkking')
     if request.method == "POST":
         flash("Welcome {}! Have a nice day!".format(request.form["username"]))
         lst = [["Username", request.form["username"]], ["Date of birth", request.form["dob"]],["Email", request.form["email"]], ["Gender", request.form["gender"]]]
         return render_template("profile.html", lst=lst)
     else:
-        print('fk')
         return render_template("homepage.html")
 
 #run app
