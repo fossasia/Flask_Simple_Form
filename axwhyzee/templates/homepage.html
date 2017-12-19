@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/homepage-stylesheet.css"/>
+    <title>Home</title>
+</head>
+<body>
+
+<main class="container-homepage">
+
+    <!-- header -->
+    <header class="item-1">FakeBook</header>
+
+    <!-- description -->
+    <article class="item-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ducimus, officia. Animi consectetur dicta eaque eos quam. Dolorum earum mollitia omnis qui? Ab at deserunt modi omnis perspiciatis quasi tempore.</article>
+
+    <!-- form -->
+    <form id="myform" name="myform" action="{{url_for('homepage')}}" method="POST" class="item-3" onsubmit="return validate(); return false;">
+
+        <!-- get username -->
+        <section>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username"/>
+            <div id="username_error" class="error"></div>
+        </section>
+
+        <!-- get date of birth -->
+        <section>
+            <label for="dob">Date of birth</label>
+            <input type="date" id="dob" name="dob"/>
+            <div id="dob_error" class="error"></div>
+        </section>
+
+        <!-- get email -->
+        <section>
+            <label class="margin-top" for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="example@mail.com"/>
+            <div id="email_error" class="error"></div>
+        </section>
+
+        <!-- get gender -->
+        <section>
+            <label for="gender">Gender</label>
+            <label class="align-radio"><input type="radio" id="gender" name="gender" value="Male" checked/>Male</label>
+            <label class="align-radio"><input type="radio" name="gender" value="Female"/>Female</label>
+            <label class="align-radio"><input type="radio" name="gender" value="Other"/>Other</label>
+        </section>
+
+        <!-- submit form -->
+        <section>
+            <input class="green margin-top" type="submit" id="register" name="action" value="Register"/>
+        </section>
+    </form>
+</main>
+
+<script>
+    // validation of user data
+    var username = document.forms["myform"]["username"];
+    var dob = document.forms["myform"]["dob"];
+    var email = document.forms["myform"]["email"];
+
+    username.addEventListener("blur", validate);
+    dob.addEventListener("blur", validate);
+    email.addEventListener("blur", validate);
+
+    function validate() {
+        // datetime object of today's date and user dob
+        var datetime_dob = new Date(dob.value);
+        var temp_today = new Date();
+        var today = new Date((temp_today.getFullYear()).toString() + "-" + (temp_today.getMonth() + 1).toString() + "-" + (temp_today.getDate()).toString());
+
+        // username min length of 3
+        if (username.value.length < 3) {
+            username.style.border = "1px solid red";
+            document.getElementById("username_error").textContent = "Username must have minimum length of 3";
+            return false;
+        } else {
+            username.style.border = "none";
+            document.getElementById("username_error").textContent = "";
+        }
+
+        // date of birth must be before today's date
+        if (today.getTime() < datetime_dob.getTime()) {
+            dob.style.border = "1px solid red";
+            document.getElementById("dob_error").textContent = "Why are you from the future?!";
+            return false;
+        } else {
+            dob.style.border = "none";
+            document.getElementById("dob_error").textContent = "";
+        }
+
+        // email must contain '@' and '.com'. There must also be some space between '@' and '.com', as well as before '@'
+        if (email.value.indexOf('@') < 1 || email.value && email.value.indexOf('.com') - 1 <= email.value.indexOf('@')) {
+            email.style.border = "1px solid red";
+            document.getElementById("email_error").textContent = "Invalid email format";
+            return false;
+        } else {
+            email.style.border = "none";
+            document.getElementById("email_error").textContent = "";
+        }
+        return true;
+    }
+</script>
+
+</body>
+</html>

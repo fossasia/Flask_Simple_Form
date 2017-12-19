@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/profile-stylesheet.css"/>
+    <title>Profile</title>
+</head>
+<body>
+
+<main class="container-profile">
+    <!-- message flashing -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <header id="message" class="item-1">{{ message }}</header>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <!-- default avatar -->
+    <article class="item-2">
+        <img src="../static/default-avatar.png"/>
+    </article>
+
+    <!-- user information -->
+    <article class="item-3">
+    {% for info in lst %}
+        <p><span class="blue-text">{{ info[0] }}:</span><span class="white-text"> {{ info[1] }}</span></p>
+    {% endfor %}
+    </article>
+
+
+</main>
+
+<script>
+    message = document.getElementById("message");
+    message.addEventListener("click", close);
+
+    function close() {
+        message.style.display = "none";
+    }
+</script>
+
+</body>
+</html>

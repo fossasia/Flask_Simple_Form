@@ -1,0 +1,113 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: url("happy.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: darkslategray;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ==== page layout ====*/
+/* homepage grid */
+.container-homepage {
+    display: grid;
+    grid-template-columns: 20px 1fr 1fr 20px;
+    grid-template-rows: 80px 60px auto;
+    grid-template-areas:
+            "header header header header"
+            ". . . ."
+            ". description form .";
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+/* header section */
+.item-1 {
+    display: grid;
+    grid-area: header;
+    background-color: darkslategray;
+    color: white;
+    font-size: 60px;
+    font-family: "Bebas Neue Regular";
+    padding: 0 20px;
+    justify-items: start;
+    align-items: center;
+}
+
+/* description section */
+.item-2 {
+    display: grid;
+    grid-area: description;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 40px;
+    font-family: "Bebas Neue Regular";
+    padding: 20px 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+/* form section containing nested grids */
+.item-3 {
+    display: grid;
+    grid-area: form;
+    grid-template-rows: repeat(5, 1fr);
+    background-color: rgba(0,0,30,0.6);
+    color: white;
+    font-size: 20px;
+    font-family: "Gill Sans MT";
+    padding: 20px 20px;
+    justify-items: stretch;
+    align-items: center;
+}
+
+/* responsive layout */
+@media only screen and (max-width: 700px) {
+    .container-homepage {
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px auto;
+        grid-template-areas:
+            "header"
+            "description"
+            "form";
+    }
+}
+
+/* ==== miscellaneous ==== */
+/* error messages */
+.error {
+    color: red;
+}
+
+/* labels */
+label {
+    display: block;
+}
+
+/* all input fields excluding radio and submit */
+input[type="text"], input[type="date"], input[type="submit"]{
+    width: 100%;
+    height: 40px;
+    padding: 10px 10px;
+}
+
+/* register button */
+input[type="submit"] {
+    height: 60px;
+    font-size: 20px;
+    color: white;
+    background-color: rgba(20,20,40,0.5);
+    outline: none;
+    border: none;
+}
+
+/* register button and hover */
+input[type="submit"]:hover {
+    opacity: 0.5;
+}

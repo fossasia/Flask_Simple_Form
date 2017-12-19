@@ -1,0 +1,71 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ==== page layout ====*/
+/* profile grid */
+.container-profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 200px auto;
+    grid-template-areas:
+            "message message message message"
+            "avatar . . ."
+            "information information information information";
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+/* flashed message section */
+.item-1 {
+    display: grid;
+    grid-area: message;
+    background: rgba(0, 0, 20, 0.5);
+    color: white;
+    font-size: 20px;
+    font-family: "Gill Sans MT";
+    justify-items: center;
+    align-items: center;
+}
+
+.item-1:hover {
+    cursor: pointer;
+    opacity: 0.2;
+}
+
+/* avatar section */
+.item-2 {
+    display: grid;
+    grid-area: avatar;
+    max-width: 100%;
+    max-height: 100%;
+    align-items: center;
+}
+
+/* information section */
+.item-3 {
+    display: grid;
+    grid-area: information;
+    grid-template-rows: repeat(4, auto);
+    background-color: darkslategray;
+    font-size: 20px;
+    font-family: "Gill Sans MT";
+    padding: 20px 20px;
+    justify-items: stretch;
+    align-items: center;
+}
+
+.blue-text {
+    color: cornflowerblue;
+}
+
+.white-text {
+    color: white;
+}
