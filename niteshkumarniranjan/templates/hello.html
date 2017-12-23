@@ -1,0 +1,15 @@
+{% extends "template.html" %} 
+{% block content %}
+<h4 class="text-center">Simple Form in Flask</h4><br>
+<div class="row justify-content-md-center">
+    <div class="col-4 align-self-center">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="text-center"> Hello, {{ name }} !</h2>
+            </div>
+        </div>
+        <br>
+        <p class="text-center"><a href="{{url_for('index')}}">&lt;&lt; Back to home</a></p>
+    </div>
+</div>
+{% endblock %}

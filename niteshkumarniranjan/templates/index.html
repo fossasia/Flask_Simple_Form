@@ -1,0 +1,31 @@
+{% extends "template.html" %} 
+{% block content %}
+<h4 class="text-center">Simple Form in Flask</h4><br>
+<div class="row justify-content-md-center">
+    <div class="col-4 align-self-center">
+        <div class="card">
+            <div class="card-body">
+                    <form action="/hello/" method="post" class="form">
+                            {% for field in form %}
+                            <div class="field">
+                                <div class="form-group label-floating">
+                                    {% if field.label.text != 'CSRF Token'%} 
+                                        <label for="{{ field.label.text }}" class="control-label">{{ field.label.text }}</label>
+                                    {{ field(class='form-control') }} 
+                                    {% else %} 
+                                        {{ field(class='', required="True") }}
+                                    {% endif %}
+                                </div>
+                                {% if field.errors %} {% for error in field.errors %}
+                                <div class="text-danger">{{ error }}</div>
+                                {% endfor %} {% endif %}
+                            </div>
+                            {% endfor %}
+                            <button type="submit" id="Submit" class="btn btn-primary" style="background-color: #9c27b0;color: #FFFFFF; outline:none;padding: 12px 30px;">Submit</button>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
