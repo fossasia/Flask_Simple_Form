@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+	Login Page
+{% endblock %}
+
+{% block body %}
+	<form action="{{url_for('login')}}" method="post">
+		<div class="container">
+			<h2 style="color:blue">Login Here</h2>
+			<div class="form-group">
+				<label for="mailid" class="control-label">Email:</label>
+				<input name="mailid" type="text" class="form-control" placeholder="Email">
+			</div>
+			<div class="form-group">
+				<label for="password" class="control-label">Password:</label>
+				<input name="password" type="password" class="form-control" placeholder="Password">
+			</div>
+			<br>
+			<a href="/userhomepage"><div id="submitbutton" style="text-align: center"><input type="submit" value="Login" class="btn btn-danger"></div></a>
+		</div>
+	</form>
+{% endblock %}

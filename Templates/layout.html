@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<meta name="vieport" content="width=device-width,initial-scale=1"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    	<title>
+    		{% block title %}
+    		{% endblock %}
+    	</title>
+    </head>
+    <body>
+    	{% if session.logged_in %}
+		    <nav class="navbar navbar-inverse">
+				<div class="container">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="/">Home</a></li>
+						<li><a href="/about">About</a></li>
+						<li><a href="/userhomepage">Dashboard</a></li>
+						<li><a href="/logout">Logout</a></li>				
+					</ul>
+				</div>
+			</nav>
+		{% else %}
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="/">Home</a></li>
+						<li><a href="/about">About</a></li>
+						<li><a href="/login">Login</a></li>				
+						<li><a href="/signup">Sign Up</a></li>
+					</ul>
+				</div>
+			</nav>
+		{% endif %}
+    	{% block body %}
+    	{% endblock %}
+    </body>
+ </html>
