@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+	Home Page
+{% endblock %}
+
+{% block body %}
+	<div class="fluid-container">
+		<h1>Hello World</h1>
+	</div>
+	<div class="container">
+		<h1 style="color:purple">Various Sites</h1>
+		{% for name in sitenames %}
+			<div class="list-group">
+				<l1><a href="{{name[1]}}">{{name[0]}}</a></l1>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

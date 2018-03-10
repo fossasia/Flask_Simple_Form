@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+	Sign Up Page
+{% endblock %}
+
+{% block body %}
+	<form action="{{url_for('signup')}}" method="post">
+		<div class="container">
+			<h3 style="color:cyan">SignUp Here</h3>
+			<div class="form-group">
+				<label for="fname" class="control-label">First Name</label>
+				<input name="fname" type="text" placeholder="Type Here" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="lname" class="control-label">Last Name</label>
+				<input name="lname" type="text" placeholder="Type Here" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="mail" class="control-label">Email ID</label>
+				<input name="mail" type="text" placeholder="Type Here" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="contact" class="control-label">Contact</label>
+				<input name="contact" type="number" placeholder="Type Here" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="pwd" class="control-label">Password</label>
+				<input name="pwd" type="password" placeholder="Type Here" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="cpwd" class="control-label">Re-Type Password</label>
+				<input name="cpwd" type="password" placeholder="Type Here" class="form-control">
+			</div>
+			<br>
+			<a href="/"><div id="signipsubmitbutton" style="text-align: center"><input type="submit" class="btn btn-info" value="Submit"></div></a>
+		</div>
+	</form>
+{% endblock %}
