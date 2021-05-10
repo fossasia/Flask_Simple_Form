@@ -1,19 +1,20 @@
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, request, redirect, render_template
 
 app = Flask(__name__)
-app.secret_key = 'some_secret_key'
 
+# when directly root called, run the index function 
+@app.route("/")
+def index():
+    # open the index.html page
+    return render_template('index.html')
 
-@app.route("/", methods=["GET", "POST"])
-def homepage():
-    if request.method == "POST":
-        flash("Welcome {}! Have a nice day!".format(request.form["username"]))
-        lst = [["Username", request.form["username"]], ["Date of birth", request.form["dob"]],["Email", request.form["email"]], ["Gender", request.form["gender"]]]
-        return render_template("profile.html", lst=lst)
-    else:
-        return render_template("homepage.html")
+# when the result url hit with a post request, show result function
+@app.route('/showGreeting', methods = ['POST'])
+def result():
+	# get the element with name 'name'
+    userName = request.form['username']
+    # pass the name to the result.html template
+    return render_template('showGreeting.html', name = userName)
 
-#run app
 if __name__ == "__main__":
-    app.debug = True
-    app.run()
+    app.run(debug=True,host='0.0.0.0')
